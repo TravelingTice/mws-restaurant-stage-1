@@ -98,7 +98,7 @@ window.initMap = () => {
   self.listener = google.maps.event.addListener(map, 'tilesloaded', () => {
     $('#map').find('*').attr('tabindex', '-1');
     google.maps.event.removeListener(self.listener);
-  })
+  });
   updateRestaurants();
 }
 
@@ -159,6 +159,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.setAttribute('alt', '""');
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
